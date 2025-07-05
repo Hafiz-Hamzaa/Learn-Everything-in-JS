@@ -54,48 +54,5 @@ Learn-Everything-in-JavaScript/
 ## ⭐️ Give this repo a star if you find the work inspiring!
 
 
-" width="500" />
-</p>
-
----
-
-## 🚀 About This Repository
-
-This repo is a full documentation of my journey to **master JavaScript** from scratch to advanced level. Every topic is covered with:
-
-- 📚 Notes in my own words
-- 💡 Practice problems with solutions
-- 🧠 Deep explanations
-- 📁 Organized by chapters (matching the course phases)
-
-This is based on the course **"Learn Everything in JavaScript"**, and it reflects real learning + code understanding.
-
----
-
-## 🧭 Repo Structure
-
-
-Learn-Everything-in-JavaScript/
-├── Chapter-01-Variables
-│   ├── notes + code
-│   └── problems
-├── Chapter-02-DataTypes
-│   ├── notes + code
-│   └── problems
-├── Chapter-03-...
-│   ├── notes + code
-│   └── problems
-...
-
-## 📸 Sneak Peek
-
-<p align="center">
-  <img src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif" width="600" />
-</p>
-
-
----
-
-## ⭐️ Give this repo a star if you find the work inspiring!
 
 
