@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Validation</title>
+    <style>
+        #hide small{
+            color: red;
+        }
+        #hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form>
+        <input type="text" placeholder="name" id="name">
+        <div id="hide">
+            <small>Your name should be grater then 2 characters</small>
+        </div>
+        <br><br>
+        <input type="email" placeholder="email"> <br><br>
+        <!-- inline validation :  required minlength="3" maxlength="8" -->
+        <!-- pattern attribute -->
+        <input type="password" placeholder="password"  pattern="[a-z]{3,8}"><br><br>
+        <select>
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select><br><br>
+        <textarea placeholder="tell us about you..."></textarea><br>
+        <input type="submit">
+    </form>
+    <script src="app.js"></script>
+</body>
+</html>

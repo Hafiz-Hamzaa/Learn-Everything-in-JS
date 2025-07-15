@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        body{
+            position: relative;
+            overflow: hidden;
+            background-color: #222;
+            color: #fff;
+        }
+        p{
+            user-select: none;
+        }
+        h2{
+            text-transform: capitalize;
+        }
+        .anyTyped{
+            font-size: 90px;
+            text-align: center;
+        }
+        #file{
+            display: none;
+        }
+        button{
+            padding: 15px;
+            border: none;
+            background-color: lightgreen;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+        .parent{
+            display: flex;
+            gap: 30px;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            margin-top: 30px;   
+        }
+        .box-two{
+            transition:all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: greenyellow;
+            border-radius: 50%;
+        }
+        ul{
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+        .lt{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid ad ab dicta aspernatur. Libero, cumque hic ipsam reiciendis deserunt beatae.</p>
+    <input type="text" placeholder="name">
+    <h2>Select your Device</h2>
+    <select>
+        <option selected disabled>select your device</option>
+        <option value="samsung">Samsung</option>
+        <option value="apple">Apple Iphone</option>
+        <option value="oppo">Oppo</option>
+        <option value="redmi">Redmi</option>
+    </select>
+
+    <h1 class="anyTyped">a</h1>
+
+    <input type="file" id="file">
+    <button>Upload file</button>
+
+    <div class="parent">
+    <div class="box"></div>
+    <div class="box-two"></div>
+    </div>
+
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact Us</li>
+        <li>FAQ</li>
+    </ul>
+    <script src="app.js"></script>
+</body>
+</html>

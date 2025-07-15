@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #grandparent{
+            width: 300px;
+            height: 300px;
+            background-color: green;
+        }
+            #parent{
+            width: 250px;
+            height: 250px;
+            background-color: red;
+        }
+            #child{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Event Bubbling</h1>
+    <div id="grandparent">
+      <div id="parent">
+        <button id="child">Click Me</button>
+      </div>
+    </div>
+
+    <h1>Event Capturing</h1>
+    <div class="a">
+        <div class="b">
+            <div class="c">
+                <button class="btn">Click me</button>
+            </div>
+        </div>
+    </div>
+
+    <input type="text" placeholder="Write anyhing">
+    <h1>Total Charcters : <span>0</span></h1>
+
+    <script>
+      // Event Bubbling :Jab kisi child element par event listener trigger hota hai, to wo event parent, grandparent aur uske upar ke elements tak "bubble" karke propagate karta hai. ander se hota wa ata hai
+      document.getElementById("grandparent").addEventListener("click", () => {
+        alert("Grandparent clicked");
+      });
+
+      document.getElementById("parent").addEventListener("click", () => {
+        alert("Parent clicked");
+      });
+
+      document.getElementById("child").addEventListener("click", (e) => {
+        e.stopPropagation() // is se ye hoga hmraa listener agai trigger nh hoga yahi ruk jai ga propagte hojai ga
+        alert("Child clicked");
+      });
+
+      // Event Capturing : Phase -01 : Event Capturing hota ha || Pahse 02: Event Bubbling hota hai ab suno Pehle hamesha Phase 1 chlta hai wo isliye nh chl pata qkai wo activate nh hota by default phase 02 on hota hai isliye wo ander se chlta hai agr ham event capturing on krle to jo activate hoga event captur pehel wo chale ga then phr wohi process me event bubbling hogi : event capture activate krne kai liye bs hame true likhna parta hai
+            document.querySelector(".c").addEventListener("click", () => {
+        console.log("c clicked");
+      });
+
+      document.querySelector(".b").addEventListener("click", () => {
+        console.log("b clicked");
+      });
+
+      document.querySelector(".a").addEventListener("click", () => {
+        console.log("a clicked");
+      },true);
+
+           document.querySelector(".btn").addEventListener("click", () => {
+        console.log("btn clicked");
+      });
+
+      // Live Charcters Count
+      let inp = document.querySelector("input")
+      let span = document.querySelector("span")
+      inp.addEventListener("input",()=>{
+        span.textContent = inp.value.length
+      })
+    </script>
+  </body>
+</html>
