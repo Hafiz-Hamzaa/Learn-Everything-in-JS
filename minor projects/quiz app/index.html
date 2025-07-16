@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Quiz Container -->
+  <div class="quiz-container" id="quiz-box">
+     <h1 class="main-heading">🧠 Quiz App</h1>
+    <div class="question" id="question">Question comes here</div>
+    <ul class="options" id="options">
+      <!-- Options will load here -->
+    </ul>
+    <button class="submit-btn" id="submit" disabled>Submit</button>
+  </div>
+
+  <!-- Result Container -->
+  <div class="quiz-container hidden" id="result-box">
+    <div class="result-container">
+      <div class="result-score" id="score"></div>
+      <div class="result-feedback" id="feedback"></div>
+      <div class="result-emoji" id="emoji"></div>
+      <button class="restart-btn" id="restart">Restart Quiz</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
