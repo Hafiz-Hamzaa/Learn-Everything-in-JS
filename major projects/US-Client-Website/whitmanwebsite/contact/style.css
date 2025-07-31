@@ -1,0 +1,458 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+.header-sec {
+    background-color: rgb(255, 255, 255);
+    height: 102px;
+    width: 100%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 999;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 350px;
+}
+
+.logo > img {
+    margin-top: 4px;
+}
+
+.links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+/* ✅ Active link (HOME) */
+a.active {
+    color: #0A5CB4;
+}
+
+a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #FFC903;
+}
+
+/* ✅ Hover effect for all links */
+a:hover {
+    color: #0A5CB4;
+}
+
+a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #FFC903;
+    transition: all 0.3s ease;
+}
+
+/* ✅ Button styling */
+.nav-btn {
+    width: 200px;
+    height: 60px;
+    border-radius: 40px;
+    border: none;
+    background-color: #0A5CB4;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* ✅ Hover effect on button */
+.nav-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+
+/* ✅ Hamburger base hidden */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* ✅ Nav Container default position */
+.nav-container {
+  display: flex;
+}
+
+/* ✅ Media Queries for Mobile & Laptop */
+@media (max-width: 1024px) {
+  nav {
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 100px 20px 20px;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-container.active {
+    left: 0;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .nav-btn {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+}
+
+
+
+
+
+/* ✅ CSS */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 600px; /* You can change height as needed */
+  background-image: url("../assets/about-hero.jpg"); /* replace with your actual image link */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75); /* Light black shade */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.about-hd{
+    font-size: 75px;
+    color: white;
+    font-family: "Merriweather", serif;
+}
+
+/* ✅ Mobile View */
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 500px;
+  }
+
+  .about-hd {
+    padding-top: 10px;
+    font-size: 50px;
+    text-orientation: upright;      /* keeps letters upright */
+    text-align: center;
+    margin: auto;             
+  }
+  #per-banner{
+    height: 700px
+  }
+}
+
+
+
+/* ✅ Base Styling */
+.contact-section {
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.contact-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 1000px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+/* ✅ First Div (Info) */
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-info h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin-bottom: 22px;
+  color: #333;
+}
+
+/* ✅ Second Div (Form) */
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  width: 100%;
+  background: transparent;
+}
+
+.contact-form button {
+  padding: 12px 0;
+  background-color: #0A5CB4;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 15px;
+}
+
+.contact-form button:hover {
+  background-color: #084a91;
+  transform: scale(1.03);
+}
+
+
+.map-section {
+  padding: 40px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+.map-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+
+
+
+.main-footer {
+  margin-top: 50px;
+  background-color: #000;
+  color: #fff;
+  padding: 60px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-box {
+  flex: 1 1 200px;
+}
+
+.footer-logo {
+  width: 140px;
+  margin-bottom: 15px;
+}
+
+.footer-box h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin-bottom: 8px;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.footer-box ul li i {
+  margin-right: 8px;
+  color: #ffc107; /* yellowish icons */
+}
+
+.footer-box ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.footer-box ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Social Icons at Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-bottom a {
+  color: white;
+  margin: 0 10px;
+  font-size: 30px;
+  transition: transform 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  transform: scale(1.2);
+  color: #0A5CB4;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .main-footer{
+    position: relative;
+    top: -100px;
+    height: auto
+  }
+  .top-footer{
+    background-color: #000000;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-box {
+    width: 100%;
+  }
+  .footer-bottom {
+    margin-top: 60px;
+    position: relative;
+    top: 75px;
+  }
+  .footer-bottom a{
+    font-size: 30px;
+  }
+}
+
+
+/* Pop Up CSS */
+ .popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .popup-box {
+    background: white;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    width: 360px;
+    height: 250px;
+  }
+
+  .popup-box h2 {
+    color: black;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .popup-btn {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+  }
+  @media screen and (max-width:420px) {
+    .popup-box{
+      width: 240px;
+      height: 300px;
+    }
+    .popup-box h2{
+      font-size: 24px;
+    }
+    .popup-btn{
+      width: 170px;
+    }
+  }
