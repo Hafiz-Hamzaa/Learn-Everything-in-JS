@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 📘 Problems (Easy → Medium → Hard)
+      // Easy : Check if a number is greater than 10 or not
+      let num = 12;
+      if (num > 10) {
+        console.log("Number is greater than 10");
+      } else {
+        console.log("Number is smaller than 10 or 10");
+      }
+      // Medium : Take a user’s age and check if they are eligible to vote (18+)
+      // let userAge = +prompt('Enter your age')
+      if(userAge >= 18){
+          console.log('you are eligible to vote!')
+      }else{
+          console.log('sorry you are not eligible to vote!')
+      }
+      // Hard : Ask the user to enter marks Print grade according to conditions
+      let userMarks = +prompt('Enter your marks out of 100')
+      if(userMarks >= 90){
+          console.log('A++')
+      }else if(userMarks >= 80){
+          console.log('A+')
+      }else if(userMarks >= 70){
+          console.log('A')
+      }else if(userMarks >= 60){
+          console.log('B')
+      }else{
+          console.log('Fail')
+      }
+      // 🧪 Real-World Feature Idea - Login Simulation (Fake Example): - Ask user for username and password - Check with stored values - Show login success/fail
+      // let userName = prompt('Enter a username')
+      // let userPassword = +prompt('Enter a password')
+      if(userName === 'Hamza' && userPassword === 12345){
+          console.log('Login Successful! ✅')
+      }else{
+          console.log('Invalid credentials ❌')
+      }
+
+      // Problems of Levels : Easy : Check if a number is between 10 and 20
+      let number = 21;
+      if (number >= 10 && number <= 20) {
+        console.log("number is between 10 and 20");
+      } else {
+        console.log("number is not between 10 and 20");
+      }
+      // Medium : Check if user is teen or adult
+      let age = 21;
+      if (age >= 13 && age < 20) {
+        console.log("You are a teenager");
+      } else if (age >= 20 && age < 60) {
+        console.log("You are an adult");
+      } else {
+        console.log("You are either a child or senior");
+      }
+      // Hard : Nested if: Check username & password & role
+      let userName = prompt('Enter your name')
+      let userPassword = +prompt('Enter a password')
+      if(userName === 'hamza' && userPassword === 2468){
+          let role = prompt('Enter a role (user/admin)')
+          if(role === 'admin'){
+              alert('welcome admin!')
+          }else if(role === 'user'){
+              alert('welcome user!')
+          }else{
+              alert('role is not recognized')
+          }
+      }else{
+          alert("Invalid username or password");
+      }
+      // 🧪 Real-World Feature Idea - Movie Ticket Booking Age Restriction
+      // Ask user for age - Check movie rating (G, PG-13, R) - Allow or block ticket booking
+      let userAge = +prompt("Enter your age");
+      let movieRating = prompt("Enter movie rating (G, PG-13, R):");
+      if (movieRating === "G") {
+        console.log("you can watch this movie!");
+      } else if (movieRating === "PG-13" && userAge >= 13) {
+        console.log("you can watch this movie");
+      } else if (movieRating === "R" && age >= 18) {
+        alert("You can watch this movie");
+      } else {
+        alert("Sorry, you cannot watch this movie");
+      }
+
+      // function declrae and invoke --- parameters & arguments
+      // 📌 Easy Level Problem : Ek function banao jo Hello World print kare. Us function ko call/invoke bhi karo.
+      function sayHello(){
+        console.log('Hello')
+      }
+      sayHello()
+      // 📌 Medium Level Problem : Ek function banao jo 2 numbers le (parameters) aur unka sum return kare. Phir result ko console.log() karo.
+      function sum(a,b){
+        console.log(a+b)
+      }
+      sum(12,10)
+
+      // 📌 Hard Level Problem :Ek function banao jo ek student ka naam aur marks input le (parameters). Agar marks >= 50 hain to "Pass" return karo.Warna "Fail" return karo.
+      function studentInfo(name,marks) {
+        if(marks >= 50) return `Congratulations ${name} you are passed!`
+        else return `Sorry ${name} you are failed!`
+      }
+      let result = studentInfo('Hamza',45)
+      console.log(result)
+    </script>
+  </body>
+</html>
