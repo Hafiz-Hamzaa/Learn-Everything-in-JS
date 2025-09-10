@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="password" placeholder="'Enter password" />
+    <button>Submit</button>
+    <script>
+      // 📌 Easy Level Problem : 👉 Ek function declaration aur ek function expression likh ke dono ko call karo. Output me confirm karo ki dono sahi chal rahe hain.
+      function sayHello() {
+        return "Hello World";
+      }
+      console.log(sayHello());
+
+      let sayHi = function () {
+        return "Hello World";
+      };
+      console.log(sayHi());
+
+      // 📌 Medium Level Problem : 👉 Ek function expression banao jo 2 numbers multiply kare aur result return kare. Phir ek array me numbers rakho aur unko loop karke multiply function ko baar-baar call karo.
+      let mul = function (a, b) {
+        return a * b;
+      };
+      let arr = [12, 8, 5, 8];
+      for (let val of arr) {
+        console.log(`${mul(val, 4)}`);
+      }
+
+      // 📌 Hard Level Problem : 👉 First-class function ka use karke ek function banao jo dusre function ko parameter ke tor par accept kare (callback). Example: Ek calculator function banao jo operationFn accept kare aur do numbers pe us operation ko apply kare.
+      function calculator(a, b, optFn) {
+        return optFn(a, b);
+      }
+      let add = (x, y) => {
+        return x + y;
+      };
+      let sub = (x, y) => {
+        return x - y;
+      };
+      console.log(calculator(12, 8, add));
+      console.log(calculator(34, 6, sub));
+
+      // Objects :
+      // Assignment Slide 26
+      const car = {
+        make: "Toyota",
+        model: "Corolla",
+        year: 1966,
+        colors: ["white", "black", "grey", "red"],
+        hybrid: true,
+        drive: () => {
+          console.log(
+            "When the engine is running and the accelerator is pressed."
+          );
+        },
+        stop: () => {
+          console.log("When the brake is pressed.");
+        },
+      };
+      console.log(car.make);
+      console.log(car.colors[0]);
+      car.drive();
+      car.stop();
+
+      console.log("------------------");
+      // 🟢 Easy Level Problem Task: Ek object person banao jisme name aur age properties ho. Phir dono ko console.log me print karo.
+      let person = {
+        name: "Hamza",
+        age: 12,
+      };
+      console.log(person.name);
+      console.log(person.age);
+
+      // 🔵 Medium Level Problem Task: Ek object student banao jisme name, rollNo, aur subjects (array) ho. Ek naya subject add karo aur total subjects ki length print karo.
+      let student = {
+        name: "Ali",
+        rollNo: 2345,
+        subjects: ["Maths", "English", "Urdu", "Physics"],
+      };
+      student.subjects.push("Chemistry");
+      console.log(student.subjects.length);
+
+      // 🔴 Hard Level Problem Task: Ek object calculator banao jisme 2 properties ho a aur b, aur ek method add jo dono numbers ko add kare aur result return kare.
+      const Calculator = {
+        a: 12,
+        b: 10,
+        add: () => {
+          let result = Calculator.a + Calculator.b;
+          return result;
+        },
+      };
+      console.log(Calculator.add());
+
+      // 🧪 Real-World Feature Idea Feature: User Profile Card
+      let userProfile = {
+        name: "Umer",
+        age: 21,
+        email: "umer@345.com",
+        hobbies: ["cricket", "coding"],
+        showProfile: () => {
+          console.log(
+            `Name: ${userProfile.name} - Age: ${userProfile.age} - Email: ${userProfile.email} - Hobbies: ${userProfile.hobbies}`
+          );
+        },
+      };
+      userProfile.showProfile();
+
+      /* Array Methods
+        🧪 Real-World Feature Idea Feature: To-Do List Manager (Basic) Ek array banao tasks ka. push() ka use karke naye tasks add karo. pop() ya shift() ka use karke complete hone wale tasks remove karo. slice() ka use karke pehle 3 tasks show karo (priority tasks). */
+      const tasks = ["Homework", "Exercise", "Read", "Practice JS"];
+      // add new task
+      tasks.push("Project Work");
+      console.log(tasks);
+      // complete first task
+      tasks.shift();
+      // show 3 tasks
+      console.log(tasks.slice(0, 3));
+
+      // ------------ Assignment 21 - 25
+      // ------------ STRING METHODS
+      // let firstName = prompt('Enter your first name')
+      // let secondName = prompt('Enter your second name')
+      // let fullName = `${firstName} ${secondName}`
+      // alert(`Welcome to ${fullName}`)
+
+      // let favMobile = prompt('What is your favourite Mobile Phone Model ??')
+      // console.log(`My favourite Mobile Phone Model is: ${favMobile}`)
+      // console.log(`Length of string is: ${favMobile.length}`)
+
+      let country = "Pakistani";
+      console.log(country.indexOf("n"));
+
+      let str = "Hello World";
+      console.log(str.lastIndexOf("l"));
+
+      let word = "Pakistani";
+      console.log(word.charAt(3));
+
+      // let firstName = prompt('Enter your first name')
+      // let secondName = prompt('Enter your second name')
+      // let fullName = firstName.concat(secondName)
+      // console.log(fullName)
+
+      let myWord = "Hyderabaad";
+      console.log(myWord.replace("Hyder", "Islam"));
+
+      let message =
+        "Ali and Sami are best friends. They play cricket and football together";
+      console.log(message);
+      console.log(message.replaceAll("and", "&"));
+
+      let valueStr = "472";
+      console.log(`value: ${valueStr} Type: ${typeof valueStr}`);
+      let convertNum = Number(valueStr);
+      console.log(`value: ${Number(convertNum)} Type: ${typeof convertNum}`);
+
+      // let userInput = prompt('Type Something......')
+      // console.log(userInput.toUpperCase())
+
+      // let userInput = prompt('Type Something......')
+      // console.log(userInput.charAt(0).toUpperCase() + userInput.slice(1))
+
+      var num = 35.36;
+      var string = num.toString().replace(".", "");
+      console.log(string);
+
+      // let user_input = prompt('type word')
+      // console.log(user_input.charAt(user_input.length-1))
+
+      let msg = "the quick brown fox jump over the lazy dog";
+      let conv = msg.split(" ");
+      let count = 0;
+      conv.forEach((val) => {
+        if (val === "the" || val === "the") {
+          count++;
+        }
+      });
+      console.log(count);
+
+      let uni = "University of Karachi";
+      console.log(uni.split(" "));
+
+      let password = document.querySelector("input");
+      let btn = document.querySelector("button");
+      let passwordRegex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      btn.addEventListener("click", () => {
+        if (passwordRegex.test(password.value)) {
+          console.log("Congratulations! Password is successfully right");
+        } else {
+          console.log("Please Enter a Vaid Password");
+        }
+      });
+
+      let username;
+      do {
+        username = prompt(
+          "Enter your username (letters, numbers, underscore only):"
+        );
+        if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+          alert("❌ Invalid username! Please enter a valid username.");
+        }
+      } while (!/^[a-zA-Z0-9_]+$/.test(username));
+      alert("✅ Welcome, " + username + "!");
+    </script>
+  </body>
+</html>
