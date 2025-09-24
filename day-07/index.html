@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Assignment 26-30
+      // let userNumber = +prompt('Please enter a positive number')
+      // console.log(`number: ${userNumber}`)
+      // console.log(`round off value: ${Math.round(userNumber)}`)
+      // console.log(`floor value: ${Math.floor(userNumber)}`)
+      // console.log(`ceil value: ${Math.ceil(userNumber)}`)
+
+      // let secretNumber = 7
+      // let askUser = +prompt('Guss a number between 1 to 10')
+      // while (secretNumber != askUser) {
+      //     askUser = +prompt('Guess wrong')
+      // }
+      // console.log('Congratulations! Guessing right number')
+
+      // let askWeight = +prompt('What is your weight')
+      // console.log(`The weight of the user is ${askWeight} kilograms`)
+
+      // console.log(`Random number between 1 to 100: ${Math.floor(Math.random() * 100)}`)
+
+      // Absolute value : number ka positive form lena
+      // let num = -8
+      // console.log(Math.abs(num))
+
+      // console.log(`Random dice value: ${Math.floor(Math.random() * 6)}`)
+      // console.log(`Random dice value: ${Math.floor(Math.random() * 6)}`)
+
+      // let isRandom = Math.floor(Math.random() * 3)
+      // if(isRandom === 2){
+      //     console.log('random coin value should be HEADS')
+      // }else if(isRandom === 1){
+      //     console.log('random coin value should be TAILS')
+      // }else{
+      //     console.log('play the toss')
+      // }
+
+
+      // ----- Loop : for loop , looping of array
+      // 🟢 Easy Level Problem
+      for (let i = 1; i <= 10; i++) {
+        console.log(i);
+      }
+
+      // 🔵 Medium Level Problem
+      let fruits = ["Apple", "Banana", "Mango", "Orange"];
+      for (let i = 0; i < fruits.length; i++) {
+        console.log(fruits[i]);
+      }
+
+      // 🔴 Hard Level Problem
+      let nums = [12, 3, 6, 90, 45];
+      let sum = 0;
+      for (let i = 0; i < nums.length; i++) {
+        sum += nums[i];
+      }
+      console.log(sum);
+
+      // 🧪 Real-World Feature Idea
+      let cart = [200, 450, 300, 150];
+      let total = 0;
+      for (let i = 0; i < cart.length; i++) {
+        total += cart[i];
+      }
+      console.log(total);
+      if (total > 1000) {
+        console.log("You got free shipping!");
+      } else {
+        console.log("Add more items for free shipping.");
+      }
+
+      // Break & Continue
+      // 🟢 Easy Level Problem Task: 1 se 10 tak numbers print karo, lekin 5 ko skip karo (continue ka use karke).
+      for (let i = 1; i <= 10; i++) {
+        if (i === 5) {
+          continue;
+        }
+        console.log(i);
+      }
+      console.log("------");
+
+      // 🔵 Medium Level Problem Task: 1 se 10 tak numbers print karo, lekin jaise hi 7 mile loop ko stop kar do (break ka use karke).
+      for (let i = 1; i <= 10; i++) {
+        if (i === 7) break;
+        console.log(i);
+      }
+      console.log("-----");
+
+      // 🔴 Hard Level Problem Task: Ek array banao numbers = [3, 7, -2, 9, -5, 12]. For loop lagao aur sirf positive numbers ko print karo (continue use karke negative skip karo). Agar number 12 mil jaye to loop stop ho jaye (break).
+      let num = [3, 7, -2, 9, -5, 12];
+      for (let i = 0; i <= num.length; i++) {
+        if (num[i] < 0) {
+          continue;
+        }
+        if (num[i] === 12) break;
+        console.log(num[i]);
+      }
+
+      // 🧪 Real-World Feature Idea
+      // Feature: Login Attempt System
+      // User max 3 times galat password daal sakta hai.
+      // Agar sahi password mil gaya to loop break ho jaye.
+      // Agar galat password mila to loop continue ho aur attempt count ho.
+      //   let correctPassword = '12345'
+      //   for(let i = 1; i <= 3; i++){
+      //     let userInput = prompt('Enter a password')
+      //     if(userInput === correctPassword){
+      //         console.log('Successful Login')
+      //         break
+      //     }else{
+      //         console.log(`${3-i} Attemps Left`)
+      //     }
+      //     if(i === 3){
+      //         console.log('Too many attempts account has been locked')
+      //     }
+      //   }
+
+      // 🟢 Easy Level Problem (Flag Variable) Task: Ek array banao nums = [2, 4, 6, 8, 10]. Dekho kya isme 5 exist karta hai ya nahi. Agar mil jaye to flag true karo, warna end me bol do "Not Found".
+      let arr = [2, 4, 6, 8, 10];
+      let flag = false;
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 5) {
+          console.log("yes 5 exist in the array");
+          flag = true;
+          break;
+        }
+      }
+      if (flag === false) {
+        console.log("Not Found");
+      }
+
+      // 🔵 Medium Level Problem (Nested Loop) Task: Multiplication Table 1 to 5 print karo nested loop ka use karke.
+      for (let i = 1; i <= 5; i++) {
+        console.log(`Table of ${i}`);
+        for (let j = 1; j <= 10; j++) {
+          console.log(`${i} x ${j} = ${i * j}`);
+        }
+      }
+
+      // Nested loop
+      let menu1 = ["Biryani", "Korma", "Karahi"];
+      let menu2 = ["Chicken", "Mutton", "Beef"];
+      for (let i = 0; i < menu1.length; i++) {
+        for (let j = 0; j < menu2.length; j++) {
+          console.log(`${menu2[j]} ${menu1[i]}`);
+        }
+      }
+
+      //     🧪 Real-World Feature Idea
+      // Feature: Simple Search System (like Ctrl+F)
+      // User ek word enter kare.
+      // Ek array of strings (lines of text) me loop se search karo.
+      // Agar word mil gaya to flag true aur uska index show karo.
+      // Agar na mile to "Word not found!" print karo.
+      //   let lines = 'Hello How are you bro'
+      //   let searchWord = prompt('Enter a word to search')
+      //   let Flag = false
+      //   for(let i = 0; i < lines.length; i++){
+      //     if(lines[i].includes(searchWord)){
+      //         console.log(`chracter found at ${i} :${lines[i]}`)
+      //         Flag = true
+      //         break
+      //     }
+      //   }
+      //   if(Flag === false){
+      //     console.log('word not found')
+      //   }
+
+      console.log("-----");
+      for (let i = 1; i <= 3; i++) {
+        console.log(`Outer loop ${i}`);
+        for (let j = 1; j <= 3; j++) {
+          console.log(`Inner loop ${j}`);
+        }
+      }
+
+      // switch statement
+      // ✅ Easy Level 👉 Ek program banao jo dayNumber (1 to 7) se day ka naam bataye (1 = Monday, 2 = Tuesday …).
+      let day = 5;
+      switch (day) {
+        case 1:
+          console.log("Monday");
+          break;
+        case 2:
+          console.log("Tuesday");
+          break;
+        case 3:
+          console.log("Wednesday");
+          break;
+        case 4:
+          console.log("Thursday");
+          break;
+        case 5:
+          console.log("Friday");
+          break;
+        default:
+          console.log("invalid num");
+          break;
+      }
+
+      // ✅ Medium Level👉 Ek simple calculator banao jo operation (+, -, *, /) ke hisaab se do numbers pe operation kare. Use switch instead of if else
+      let num1 = 12;
+      let num2 = 6;
+      let opt = "/";
+      switch (opt) {
+        case "+":
+          console.log(num1 + num2);
+          break;
+        case "-":
+          console.log(num1 - num2);
+          break;
+        case "*":
+          console.log(num1 * num2);
+          break;
+        case "/":
+          console.log(num1 / num2);
+          break;
+
+        default:
+          console.log("invalid opt");
+          break;
+      }
+
+      // 🌍 Real World Feature Idea 🔹 Ek restaurant order system: User se prompt lo usne kya order kiya (biryani, karahi, korma, etc.) aur switch se price show karo.
+      let userDemand = prompt("What do you want to eat ??");
+      switch (userDemand) {
+        case "Biryani":
+          console.log("Price : Rs 300");
+          break;
+        case "Karahi":
+          console.log("Price : Rs 800");
+          break;
+        case "Korma":
+          console.log("Price : Rs 500");
+          break;
+        default:
+          console.log('This item is not available')
+          break;
+      }
+
+      // Challenge Slide No : 35
+      let person1 = {
+        name: 'Hamza',
+        age: 24,
+        status: 'resident'
+      }
+      let person2 = {
+        name: 'Zaid',
+        age: 20,
+        status: 'tourist'
+      }
+
+      if(person2.age > 18 && person2.status === 'resident'){
+        console.log('Welcome you earn a price')
+      }else{
+        console.log('Sorry you are not eligible to get the price')
+      }
+    </script>
+  </body>
+</html>
