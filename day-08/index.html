@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Assignment 1 :
+      function calculator(opt, a, b) {
+        switch (opt) {
+          case 1:
+            return a + b;
+            break;
+          case 2:
+            return a - b;
+            break;
+          case 3:
+            return a * b;
+            break;
+          case 4:
+            return a / b;
+            break;
+
+          default:
+            console.log("invalid operation");
+            break;
+        }
+      }
+
+      while (true) {
+        let userInput = +prompt(
+          "Selection Options : 0 for exit , 1 for add , 2 for sub , 3 for mul , 4 for div"
+        );
+        if (userInput === 0) {
+          console.log("loop exits");
+          break;
+        } else if (![1, 2, 3, 4].includes(userInput)) {
+          alert("invalid operations");
+          continue;
+        } else {
+          let firstNum = +prompt("Enter a first number");
+          let secondNum = +prompt("Enter a second number");
+          if (isNaN(firstNum) || isNaN(secondNum)) {
+            alert("must be a number");
+            continue;
+          }
+          let finalRes = calculator(userInput, firstNum, secondNum);
+          alert(`Result : ${finalRes}`);
+        }
+      }
+
+      // Assignment No 2 :
+      let word = prompt("Enter a single word");
+      let isPalindrome = true;
+      for (let i = 0; i < word.length; i++) {
+        let firstChar = word[i];
+        let lastChar = word[word.length - 1 - i];
+        if (firstChar !== lastChar) {
+          isPalindrome = false;
+          break;
+        }
+      }
+      if (isPalindrome) {
+        alert(`${word} is palindrome`);
+      } else {
+        alert(`${word} is not palindrome`);
+      }
+
+      // Assignnemnt No 3:
+      function fullName(firstName, lastName) {
+        return `${firstName} ${lastName}`.toUpperCase();
+      }
+      let res = fullName("Hafiz", "Hamza");
+      console.log(res);
+
+      // Assignment No 4
+      function myName(nm) {
+        return nm.split(" ").map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(" ")
+      }
+      let out = myName("zaid ali khan");
+      console.log(out); 
+
+
+      // ------- Assignment 35-38
+      function time(){
+        let date = new Date
+        console.log(`${date.toLocaleDateString()} ${date.toLocaleTimeString()}`)
+      }
+      time()
+
+      function greet(fName,lName) {
+        console.log(`${fName} ${lName}`)
+      }
+      greet('Hassan','Raja')
+
+      function sum() {
+        let num1 = +prompt('Enter a first number')
+        let num2 = +prompt('Enter a second number')
+        return num1 + num2
+      }
+      console.log(sum())
+
+      function square(num){
+        return num ** 2
+      }
+      console.log(square(4))
+
+      function factorial(num) {
+        let pro = 1
+        for(let i = 1; i <= num; i++){
+          pro *= i
+        }
+        return pro
+      }
+      console.log(factorial(6))
+
+      function area(width,height) {
+        return width * height
+      }
+      console.log(area(20,5))
+
+      function isPalindrome(str) {
+        let rev = ""
+        for(let i = str.length - 1; i >= 0; i--){
+          rev += str[i]
+        }
+        if(str === rev){
+          console.log('Palindrome')
+        }else{
+          console.log('Not Palindrome')
+        }
+      }
+      isPalindrome('noon')
+
+      function counting(start,end) {
+        for(let i = start; i <= end; i++){
+          console.log(i)
+        }
+      }
+      counting(4,15)
+      console.log('-------')
+      function hypotensue(base,perp) {
+        function square(x) {
+          return x * x
+        }
+        let hypo = square(base) + square(perp)
+        return Math.sqrt(hypo)
+      }
+      let result = hypotensue(3,4)
+      console.log(result)
+
+      function stringPassed(str) {
+        return str.split(' ').map((word)=>word.charAt(0).toUpperCase()+word.slice(1).toLowerCase()).join(" ")
+      }
+      console.log(stringPassed('the quick brown fox'))
+      console.log(stringPassed('javascript is language'))
+      console.log('-----')
+
+      function longestWord(str) {
+        let breakWord = str.split(' ')
+        let longWord = breakWord[0]
+        for(let val of breakWord){
+          if(val.length > longWord.length){
+            longWord = val
+          }
+        }
+        return longWord
+      }
+      console.log(longestWord('Web Development Tutotial'))
+      console.log(longestWord('JavaScript is awesome'))
+      console.log('--------')
+
+      function countLetter(str,letter) {
+        let count = 0
+        for(let val of str){
+          if(val === letter){
+            count++
+          }
+        }
+        return count
+      }
+      console.log(countLetter('apple','e'))
+
+      console.log('---------')
+
+      function calcCircumference(r) {
+        return 2 * 3.142 * r
+      }
+      console.log(calcCircumference(2))
+    </script>
+  </body>
+</html>
