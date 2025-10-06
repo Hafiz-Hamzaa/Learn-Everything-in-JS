@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup Form</title>
+</head>
+<body>
+  <h2>Signup Form</h2>
+
+  <form id="signupForm">
+    <label>Name:</label>
+    <input type="text" id="name" placeholder="Enter your name"><br><br>
+
+    <label>Email:</label>
+    <input type="email" id="email" placeholder="Enter your email"><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password" placeholder="Enter your password"><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Form Data:</h3>
+  <p id="output"></p>
+
+  <h2>Product Details</h2>
+
+  <p id="text">
+    This is a short intro about the product.
+    <span id="more" style="display: none;">
+      It is made from high-quality materials, offers great durability, and comes with a one-year warranty. Perfect for everyday use!
+    </span>
+  </p>
+
+  <button id="btn">Read More</button>
+
+  <script>
+    let form = document.getElementById('signupForm');
+    let output = document.getElementById('output');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); 
+      let name = document.getElementById('name').value;
+      let email = document.getElementById('email').value;
+      let password = document.getElementById('password').value;
+
+      output.innerHTML = `
+        <b>Name:</b> ${name} <br>
+        <b>Email:</b> ${email} <br>
+        <b>Password:</b> ${password}
+      `;
+    });
+
+    let btn = document.getElementById('btn');
+    let moreText = document.getElementById('more');
+
+    btn.addEventListener('click', function() {
+      if (moreText.style.display === 'none') {
+        moreText.style.display = 'inline';
+        btn.textContent = 'Read Less';
+      } else {
+        moreText.style.display = 'none';
+        btn.textContent = 'Read More';
+      }
+    });
+  </script>
+</body>
+</html>
