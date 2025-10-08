@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Date Methods :
+      // Problem 1:
+      // let date = new Date
+      // console.log(date.getDate(),":", date.getTime())
+
+      // Problem 2:
+      let month = new Date();
+      let currentMon = month.getMonth();
+      let months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+      alert(months[currentMon]);
+
+      // Problem 3:
+      let myDate = new Date();
+      let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      alert(days[myDate.getDay()]);
+
+      // Problem 4:
+      if (days[myDate.getDay() === "Sat" || days[myDate.getDay() === "Sun"]]) {
+        console.log("Its Fun day");
+      } else {
+        console.log("Its not Fun day");
+      }
+
+      // Problem 5:
+      let currentDate = new Date();
+      if (currentDate.getDay() < 16) {
+        console.log("First Fifteen of days of the month");
+      } else {
+        console.log("Last fifteen days of the month");
+      }
+
+      // Problem 6:
+      let currentTime = new Date();
+      if (currentTime.getHours() >= 12 && currentTime.getHours() < 24) {
+        console.log("Its PM");
+      } else {
+        console.log("Its AM");
+      }
+
+      // Problem 7:
+      // let userAge = +prompt('How old are you ??')
+      // let currentYear = date.getFullYear()
+      // console.log(`Your Birth Year is : ${currentYear - userAge}`)
+
+      // Problem 8:
+      let d = new Date();
+      let totalMinutes = Date.now() / 60000;
+      console.log(`Minutes since Jan 1 , 1970 : ${totalMinutes}`);
+
+      // Problem 9:
+      let laterDate = new Date(2020,11,31)
+      console.log(laterDate)
+
+      // Problem 10:
+    </script>
+  </body>
+</html>
